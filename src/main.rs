@@ -36,8 +36,6 @@ fn parse_csv(csv_content: &str) -> HashMap<String, String> {
     let mut map = HashMap::new();
     for line in csv_content.lines() {
         if let Some((name, body)) = line.split_once(',') {
-            println!("{name}, {body}");
-            println!("{}", body.is_empty());
             map.insert(
                 name.to_string(),
                 if body.is_empty() { "{ todo!() }" } else { body }.to_string(),
@@ -75,7 +73,6 @@ fn replace_function_bodies(
     replace_sorted
         .into_iter()
         .for_each(|(begin, end, new_body)| {
-            println!("{new_body}");
             new_code.replace_range(begin..end, new_body);
         });
 
