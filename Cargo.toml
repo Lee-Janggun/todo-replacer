@@ -3,5 +3,9 @@ name = "todo-replacer"
 version = "0.1.0"
 edition = "2021"
 
+license = "MIT OR Apache-2.0"
+description = "Replace function body with `todo!()`."
+repository = "https://github.com/Lee-Janggun/todo-replacer"
+
 [dependencies]
 ra_ap_syntax = "0.0.258"
